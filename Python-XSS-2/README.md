@@ -34,6 +34,11 @@ Find With My yml template :
 ![Getting Started](2.png)
 
 
+## Attack Hint 
+
+![Getting Started](3.png)
+
+
 ## Fix Hint
 
 https://flask.palletsprojects.com/en/1.1.x/templating/#controlling-autoescaping
