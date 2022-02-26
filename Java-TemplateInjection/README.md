@@ -34,13 +34,13 @@ Now visit [localhost:8080](http://localhost:8080)
 
 
 ## How To Exploit
-After visitin [localhost:8080](http://localhost:8080) you must see a page like this:
+After visiting [localhost:8080](http://localhost:8080) you must see a page like this:
 
-![[homepage.png]]
+![homepage.png](homepage.png)
 
 to test SSTI simply type something like ${7*7} in the input and click join. it will be processed on server and you will see the result which is 49
 
-![[49.png]]
+![49.png](49.png)
 
 Because the application is vulnerable to SSTI we try to achive RCE on the machine. to do this follow these steps:
 
@@ -57,7 +57,9 @@ nc -v -l 9999
 
 4. Here is a video getting reverse shell.
 
-![[reverse-shell.mp4]]
+https://user-images.githubusercontent.com/9821568/155853142-8e2a37cc-f16e-4419-bedc-74a3c340e905.mp4
+
+
 
 ## Fix Hint
 
