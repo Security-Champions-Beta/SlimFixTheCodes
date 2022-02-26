@@ -79,4 +79,44 @@ If you want to pull request please follow this :
 
 CONTRIBUTION.md
  
-## Sample Report
+## Awesome Learn & Report
+
+Learn:
+
+https://cobalt.io/blog/a-pentesters-guide-to-server-side-template-injection-ssti
+
+https://portswigger.net/web-security/server-side-template-injection
+
+https://workbook.securityboat.in/resources/web-app-pentest/server-side-template-injection-ssti
+
+Tools: https://github.com/epinna/tplmap
+
+https://github.com/epinna/tplmap/blob/master/burp_extension/README.md
+
+Report : 
+
+RCE on Yahoo:  https://gist.github.com/Yas3r/7006ec36ffb987cbfb98
+
+https://www.blackhat.com/docs/us-15/materials/us-15-Kettle-Server-Side-Template-Injection-RCE-For-The-Modern-Web-App-wp.pdf
+
+https://www.youtube.com/watch?v=3cT0uE7Y87s
+
+https://pequalsnp-team.github.io/cheatsheet/flask-jinja2-ssti
+
+RCE in Hubspot with EL injection in HubL: https://www.betterhacker.com/2018/12/rce-in-hubspot-with-el-injection-in-hubl.html?spref=tw
+
+https://medium.com/@david.valles/gaining-shell-using-server-side-template-injection-ssti-81e29bb8e0f9
+
+EXPLOITING SERVER SIDE TEMPLATE INJECTION WITH TPLMAP:	https://owasp.org/www-pdf-archive/Owasp_SSTI_final.pdf
+
+Server Side Template Injection – on the example of Pebble: https://research.securitum.com/server-side-template-injection-on-the-example-of-pebble/
+
+Exploring SSTI in Flask/Jinja2, Part II: https://blog.nvisium.com/p255
+
+https://hackerone.com/reports/423541
+
+https://subscription.packtpub.com/book/networking-and-servers/9781788626897/11
+
+https://medium.com/@gandhim373/4-server-side-template-injection-easily-found-d7ca345aa55f
+
+https://github.com/TeamGreyFang/CTF-Writeups/blob/master/VolgaCTF2020/Web-Newsletter/README.md
