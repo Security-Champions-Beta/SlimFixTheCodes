@@ -42,32 +42,24 @@ Ask the user/bot access a domain controlled by the attacker The TTL of the DNS i
 ![Getting Started](6.png)
 
 
-## Attack Step 
+## Source Code 
 
-
-1. Create simple python code and blocked 127.0.0.1 & 169.254.169.254 & localhost request
-2. start python httpserver
-3. run python code that the answer is I can't connect and make request because the the code run on 127.0.0.1 
 
 ![Getting Started](1.png)
 
 ![Getting Started](2.png)
 
 
-4. we want to bypass this with dnsrebinding 
-5. we want to add a record to one of domain 
-such as 8.8.8.8 and 127.0.0.1
+now, we change the address to b0x.mannulinux.org
+and we received to 200 status code because b0x.mannulinux.org resolved to 127.0.0.1 and we can bypass SSRF restrictions with DNS rebinding
 
 ![Getting Started](5.png)
 
-6. we can run this command fot test 
+user nslookup to verify
 
         nslookup b0x.mannulinux.org 8.8.8.8
 
 ![Getting Started](3.png)
-
-7. now, we change the address to b0x.mannulinux.org
-and we received to 200 status code because b0x.mannulinux.org resolved to 127.0.0.1 and we can bypass SSRF restrictions with DNS rebinding
 
 
 ## Hint for TTL 
