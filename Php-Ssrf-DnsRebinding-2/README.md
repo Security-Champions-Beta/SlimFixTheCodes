@@ -55,7 +55,7 @@ and we received to 200 status code because b0x.mannulinux.org resolved to 127.0.
 
 ![Getting Started](5.png)
 
-user nslookup to verify
+use nslookup to verify
 
         nslookup b0x.mannulinux.org 8.8.8.8
 
