@@ -53,6 +53,9 @@ http://localhost:8080/actuator/heapdump
 5. login with them and you will be greeted as victim
 
 here is a video to show all the steps:
+
+
+
 https://user-images.githubusercontent.com/9821568/156940898-633f46c8-9d94-49a0-ab62-494a070b2f1a.mp4
 
 
@@ -67,6 +70,9 @@ curl -XPOST -v http://localhost:8080/actuator/shutdown
 3. Application will be shutdown
 
 here is a video to show all the steps:
+
+
+
 https://user-images.githubusercontent.com/9821568/156940904-ff982b54-9415-4f13-a38c-b702df365301.mp4
 
 
