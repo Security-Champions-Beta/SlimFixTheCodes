@@ -100,7 +100,7 @@ https://owasp.org/www-community/attacks/xss/
 * Step 1: Now browse to url
 
     ```
-    http://localhost:8888/ReflectedXSS/secure
+    http://localhost:8888/ReflectedXSS/secure.jsp?name=MHN
     ```
 
     > **Note:** Replace `localhost` with your server ip
