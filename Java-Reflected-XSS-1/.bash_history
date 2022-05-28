@@ -1,0 +1,3 @@
+cd /root/
+ls
+exit

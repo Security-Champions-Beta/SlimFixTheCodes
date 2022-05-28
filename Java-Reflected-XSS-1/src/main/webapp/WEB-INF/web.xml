@@ -1,0 +1,55 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>  
+  <display-name>ReflectedXSS</display-name>     
+    <servlet>
+        <servlet-name>ReflectedXSS</servlet-name>
+        <servlet-class>we45.training.labs.ReflectedXSS</servlet-class>        
+    </servlet>        
+    <servlet-mapping>
+        <servlet-name>ReflectedXSS</servlet-name>
+        <url-pattern>/insecure</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Secure</servlet-name>
+        <servlet-class>we45.training.labs.Secure</servlet-class>        
+    </servlet>        
+    <servlet-mapping>
+        <servlet-name>Secure</servlet-name>
+        <url-pattern>/secure</url-pattern>
+    </servlet-mapping> 
+    <filter>
+        <filter-name>httpHeaderSecurity</filter-name>
+        <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+          <param-name>antiClickJackingEnabled</param-name>
+          <param-value>true</param-value>
+        </init-param>
+        <init-param>
+          <param-name>antiClickJackingOption</param-name>
+          <param-value>DENY</param-value>
+        </init-param>
+        <init-param>
+          <param-name>xssProtectionEnabled</param-name>
+          <param-value>false</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>httpHeaderSecurity</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>  
+    <!-- <filter>
+        <filter-name>ContentSecurityPolicy</filter-name>
+        <filter-class>we45.training.labs.CSPPoliciesApplier</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ContentSecurityPolicy</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> -->    
+    <welcome-file-list>
+        <welcome-file>insecure</welcome-file>
+    </welcome-file-list>
+</web-app>
