@@ -52,6 +52,12 @@ https://owasp.org/www-community/attacks/xss/
 
     > **Note:** Replace `localhost` with your server ip
 
+
+![0.png](0.png)
+
+![00.png](00.png)
+
+
 * Step 6: Perform a normal activity
 
     ```
@@ -104,6 +110,7 @@ https://owasp.org/www-community/attacks/xss/
 
 ![1.png](1.png)
 
+![3.png](3.png)
 
 
 * Step 1: Now browse to url
