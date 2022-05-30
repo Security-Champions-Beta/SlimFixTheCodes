@@ -1,0 +1,1 @@
+{"apps": {"http": {"servers": {"srv0": {"routes": [{"terminal": true, "handle": [{"routes": [{"handle": [{"handler": "reverse_proxy", "upstreams": [{"dial": "127.0.0.1:3000"}]}]}], "handler": "subroute"}], "match": [{"host": ["k3rzw6nv396r5oeag9kjj.appsecengineer.training"]}]}], "listen": [":80"]}}}}}

@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:5.7
+    command: --init-file /data/application/init.sql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'userdb'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+      - ./schema.sql:/data/application/init.sql
+  web:
+    image: tomcat:9.0.1-jre8-alpine  
+    command: ["catalina.sh", "run"]
+    ports:
+      - "8888:8080"
+    environment:
+      JDBC_URL: "jdbc:mysql://mysql:3306/userdb?useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10"
+      DB_USER: 'root'
+      DB_PASSWORD: 'password'
+    volumes:
+      - ./target/SQLInjection.war:/usr/local/tomcat/webapps/SQLInjection.war
+      - ./catalina.properties:/usr/local/tomcat/conf/catalina.properties
+    links:
+      - mysql
+volumes:
+  my-db:

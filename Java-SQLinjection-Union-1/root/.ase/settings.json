@@ -1,0 +1,7 @@
+{
+   "terminal.integrated.rendererType": "dom",
+   "workspace.preserveWindow": true,
+   "search.lineNumbers": true,
+   "preview.openByDefault": true,
+   "editor.autoSave": "on"
+}
