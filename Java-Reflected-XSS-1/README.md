@@ -35,7 +35,7 @@ https://owasp.org/www-community/attacks/xss/
 * Step 3: Build the project
 
     ```
-    docker run -it --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -p 8080:8080 -/usr/src/mymaven maven:3.3-jdk-8 mvn package
+    docker run -it --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -p 8080:8080  -w /usr/src/mymaven maven:3.3-jdk-8 mvn package
     ```
 
 * Step 4: Now start the app
