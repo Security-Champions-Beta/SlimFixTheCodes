@@ -49,7 +49,12 @@ Sandbox => The regex test runs inside a Node VM which behaves like a sandbox pro
 Regex timeout => the regex function is set to timeout in 10 seconds (10,000 milliseconds)
 References
 
+https://snyk.io/blog/snyking-in-regular-expression-denial-of-service-vulnerability-exploit-in-the-ms-package/
+
 https://www.npmjs.com/package/safe-regex
+
 https://ocaml.org/docs/install.html
+
 https://www.cs.bham.ac.uk/~hxt/research/rxxr2/rxxr2.zip
+
 https://www.cs.bham.ac.uk/~hxt/research/rxxr2/
