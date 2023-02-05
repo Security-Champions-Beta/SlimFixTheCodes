@@ -17,19 +17,30 @@ is a process of convershen of data from one format to another.
 * The example of such algorithms are ASCII, Unicode, Base64 etc.
 How does Base64 Encoding works ? Convert the characters in the string into decimal.
 * Base64 is common into Anroid app - Decemal Value 115 s
-Why ? urlbased64 JWT  + relpaced by - , / replaced by _ , = are ommited
+Why ? urlbased64 JWT  
+
+
++ relpaced by - 
+
+/ replaced by _ 
+
+= are ommited
+
 * use on upload image for inline rendering on Minioo - binary data and ship a cross network fo normalize
           
 ---------------------------------------------------JWT---------------------------------------------------
 is  securely transmitting information between parties as a JSON object
 
-● Stateless session management, no session cookies --> Headers
-● Once configured (establishes trust), backend doesn’t need to talk to
-authorization server
+Stateless session management, no session cookies --> Headers
+
+Once configured (establishes trust), backend doesn’t need to talk to authorization server
 
 Base64 vs Base64url encoding
+
 +(Plus) is replaces by - (mines)
+
 / (slash) is replaced by _(underscore)
+
 = (padding characters) are deleted 
 
 ------
