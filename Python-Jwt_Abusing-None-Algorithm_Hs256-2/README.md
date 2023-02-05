@@ -4,7 +4,7 @@ JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and s
 
 https://jwt.io/
 
----------------------------------------------------Encode-Hash-Encryption
+---------------------------------------------------Encoding
 - Encoding is a process of convert data from one format to another.
 - Encryption is a process to convert the information into a cipher using keys, to maintain the confidentiality.
 - Hashing is a procees (technique) to ensure the integrity of the data by converting it into a fixed-length string
@@ -19,9 +19,7 @@ How does Base64 Encoding works ? Convert the characters in the string into decim
 * Base64 is common into Anroid app - Decemal Value 115 s
 Why ? urlbased64 JWT  + relpaced by - , / replaced by _ , = are ommited
 * use on upload image for inline rendering on Minioo - binary data and ship a cross network fo normalize
-
-
-                                          
+          
 ---------------------------------------------------JWT---------------------------------------------------
 is  securely transmitting information between parties as a JSON object
 
@@ -34,32 +32,25 @@ Base64 vs Base64url encoding
 / (slash) is replaced by _(underscore)
 = (padding characters) are deleted 
 
-JWT Token Header -> type of hashing
-JWT Token Payload (Claims) -> containg claim
-JWT Token Signatures -> sign
 ------
-○ alg 
-only allow specific algorithm(s)
-○ kid 
-The reserved kid claim represents a key identifier, helping the receiver to find the right key
-○ jku 
-The reserved jku claim represents a URL pointing to a set of public keys that can be used to verify the signature
-○ x5u
-X5u reserved claim represents the location of an X.509 certificate (TLS certificate)
-○ iss	Issuer	
-The identity of the party who issued the token.
-○ iat	Issued At	
-The Unix timestamp of when the token was issued.
-○ nbf	Not Before	
-The Unix timestamp of earliest date that the token can be used.
-○ exp	Expires	
-The Unix timestamp of when the token expires.
+alg : only allow specific algorithm(s)
+kid : The reserved kid claim represents a key identifier, helping the receiver to find the right key
+jku : The reserved jku claim represents a URL pointing to a set of public keys that can be used to verify the signature
+x5u : X5u reserved claim represents the location of an X.509 certificate (TLS certificate)
+iss	Issuer : The identity of the party who issued the token.
+iat	Issued At	: The Unix timestamp of when the token was issued.
+
 --------
-● JWT storage - cookie XSS protections (HttpOnly & secure flags) are not
-● available for browser local/session storage.
-● Best practice - memory-only JWT token handling.
-● Protection of the crypto keys (server side). JWE
-● Protection against CSRF - it’s not JWT tokens, it’s about how you use them 
+JWT storage - cookie XSS protections (HttpOnly & secure flags) are not
+
+available for browser local/session storage.
+
+Best practice - memory-only JWT token handling.
+
+Protection of the crypto keys (server side). JWE
+
+
+Protection against CSRF - it’s not JWT tokens, it’s about how you use them 
 
 
 ## Owasp
