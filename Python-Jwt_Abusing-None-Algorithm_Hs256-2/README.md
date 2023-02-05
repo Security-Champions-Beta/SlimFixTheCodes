@@ -4,6 +4,106 @@ JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and s
 
 https://jwt.io/
 
+---------------------------------------------------Encode-Hash-Encryption
+- Encoding is a process of convert data from one format to another.
+- Encryption is a process to convert the information into a cipher using keys, to maintain the confidentiality.
+- Hashing is a procees (technique) to ensure the integrity of the data by converting it into a fixed-length string
+
+Encoding -> 
+is a process of convershen of data from one format to another.
+* Encoding is not used to security purpose 
+* It is a technique in which the data is transformed 
+* There is no use of any “Key” in encoding
+* The example of such algorithms are ASCII, Unicode, Base64 etc.
+How does Base64 Encoding works ? Convert the characters in the string into decimal.
+* Base64 is common into Anroid app - Decemal Value 115 s
+Why ? urlbased64 JWT  + relpaced by - , / replaced by _ , = are ommited
+* use on upload image for inline rendering on Minioo - binary data and ship a cross network fo normalize
+--
+Encryption -> 
+is a process to convert (the information) into -> (a cipher) using (keys), to maintain the confidentiality.
+
+Encryption has 2 typeS[] --> Sym --> Asy
+ONE . Symetric --> 
+
+*  Sender uses a Private Key to cipher the data 
+*  Sender and reciver Have the same private key to decrypt OR (The-Same-Key)
+
+Modes of encryption are 
+	1 .  Stream Cipher :  encrypt one bit at the time ->  RC4 - A5 wireless networks
+			Stream Ciphers operate on a stream of data bit by bit  
+			 stream cipher uses 8 bits.
+			if we have 2 files each file has identical Hex string the first
+			why ? TLs , ssl used for speed - Serialing huge data 
+	2 .  Block Cipher  : 
+					A block cipher breaks-down plaintext messages into fixed-size blocks before converting them into ciphertext using a key.
+					the block mode encrypts a certain block of data bits of block (common -> content , file)
+					Encrypting information in chunks.  
+			why ? encrypted small amount B attacker cant tamper - each block decrypt paralles and usefill for insert Pins
+			on DB - 
+			* Difrent Stream - Block -> block mode offers a minor speed bump.
+			* alittle more secure 
+	   2.1 .Electronic code book ->  128, 192, and 256 bits.
+						* is a bad idea - without using an IV 
+						* each block of data is encrypted separately & independently in block mode.
+						* identical plaintexts lead to identical ciphertexts.
+             			Attack : ECB Block Shufler -> 
+	   2.2 . CBC --> (Cipher Blocker Chaining)  
+			 message is split into blocks of X bytes length and each block is XORed with the previous encrypted block
+			 Initials Vector and Randomize on LSB( Least Significant Bit ) at first and MSB( Most Significant Bits ) the end
+			 Chapped up message
+			 XOR 
+			 +padding
+			 1. BitFlipper Attack --> attacker is able to geust firstcipher text that generated 
+			 Diffrence if we 1, 2, 3 password fo 10.00.00 , we will see different cipher 10.00.0
+			 2. oracle padding - > PKCS7 - the padding will be composed of the same number
+			 * When an application decrypts encrypted data, it will first decrypt the data; then it will remove the padding
+			  During the cleanup of the padding, if an invalid padding triggers a detectable behavior, you have a padding oracle. The detectable behavior can be an error, a lack of results, or a slower response.
+	   2.3 . CFB --> (cipher feedback mode ) cipher text, or the first block becomes the key stream for the next block.
+	                             And then it flips the next block as well.
+										  This has still remained secured.
+										  Pillow library python
+                                          
+---------------------------------------------------JWT---------------------------------------------------
+is  securely transmitting information between parties as a JSON object
+
+● Stateless session management, no session cookies --> Headers
+● Once configured (establishes trust), backend doesn’t need to talk to
+authorization server
+
+Base64 vs Base64url encoding
++(Plus) is replaces by - (mines)
+/ (slash) is replaced by _(underscore)
+= (padding characters) are deleted 
+
+JWT Token Header -> type of hashing
+JWT Token Payload (Claims) -> containg claim
+JWT Token Signatures -> sign
+------
+○ alg 
+only allow specific algorithm(s)
+○ kid 
+The reserved kid claim represents a key identifier, helping the receiver to find the right key
+○ jku 
+The reserved jku claim represents a URL pointing to a set of public keys that can be used to verify the signature
+○ x5u
+X5u reserved claim represents the location of an X.509 certificate (TLS certificate)
+○ iss	Issuer	
+The identity of the party who issued the token.
+○ iat	Issued At	
+The Unix timestamp of when the token was issued.
+○ nbf	Not Before	
+The Unix timestamp of earliest date that the token can be used.
+○ exp	Expires	
+The Unix timestamp of when the token expires.
+--------
+● JWT storage - cookie XSS protections (HttpOnly & secure flags) are not
+● available for browser local/session storage.
+● Best practice - memory-only JWT token handling.
+● Protection of the crypto keys (server side). JWE
+● Protection against CSRF - it’s not JWT tokens, it’s about how you use them 
+
+
 ## Owasp
 
 https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.md
