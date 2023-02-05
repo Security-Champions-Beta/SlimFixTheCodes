@@ -45,10 +45,15 @@ Base64 vs Base64url encoding
 
 ------
 alg : only allow specific algorithm(s)
+
 kid : The reserved kid claim represents a key identifier, helping the receiver to find the right key
+
 jku : The reserved jku claim represents a URL pointing to a set of public keys that can be used to verify the signature
+
 x5u : X5u reserved claim represents the location of an X.509 certificate (TLS certificate)
+
 iss	Issuer : The identity of the party who issued the token.
+
 iat	Issued At	: The Unix timestamp of when the token was issued.
 
 --------
