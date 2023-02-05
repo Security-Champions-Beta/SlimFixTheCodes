@@ -19,50 +19,8 @@ How does Base64 Encoding works ? Convert the characters in the string into decim
 * Base64 is common into Anroid app - Decemal Value 115 s
 Why ? urlbased64 JWT  + relpaced by - , / replaced by _ , = are ommited
 * use on upload image for inline rendering on Minioo - binary data and ship a cross network fo normalize
---
-Encryption -> 
-is a process to convert (the information) into -> (a cipher) using (keys), to maintain the confidentiality.
 
-Encryption has 2 typeS[] --> Sym --> Asy
-ONE . Symetric --> 
 
-*  Sender uses a Private Key to cipher the data 
-*  Sender and reciver Have the same private key to decrypt OR (The-Same-Key)
-
-Modes of encryption are 
-	1 .  Stream Cipher :  encrypt one bit at the time ->  RC4 - A5 wireless networks
-			Stream Ciphers operate on a stream of data bit by bit  
-			 stream cipher uses 8 bits.
-			if we have 2 files each file has identical Hex string the first
-			why ? TLs , ssl used for speed - Serialing huge data 
-	2 .  Block Cipher  : 
-					A block cipher breaks-down plaintext messages into fixed-size blocks before converting them into ciphertext using a key.
-					the block mode encrypts a certain block of data bits of block (common -> content , file)
-					Encrypting information in chunks.  
-			why ? encrypted small amount B attacker cant tamper - each block decrypt paralles and usefill for insert Pins
-			on DB - 
-			* Difrent Stream - Block -> block mode offers a minor speed bump.
-			* alittle more secure 
-	   2.1 .Electronic code book ->  128, 192, and 256 bits.
-						* is a bad idea - without using an IV 
-						* each block of data is encrypted separately & independently in block mode.
-						* identical plaintexts lead to identical ciphertexts.
-             			Attack : ECB Block Shufler -> 
-	   2.2 . CBC --> (Cipher Blocker Chaining)  
-			 message is split into blocks of X bytes length and each block is XORed with the previous encrypted block
-			 Initials Vector and Randomize on LSB( Least Significant Bit ) at first and MSB( Most Significant Bits ) the end
-			 Chapped up message
-			 XOR 
-			 +padding
-			 1. BitFlipper Attack --> attacker is able to geust firstcipher text that generated 
-			 Diffrence if we 1, 2, 3 password fo 10.00.00 , we will see different cipher 10.00.0
-			 2. oracle padding - > PKCS7 - the padding will be composed of the same number
-			 * When an application decrypts encrypted data, it will first decrypt the data; then it will remove the padding
-			  During the cleanup of the padding, if an invalid padding triggers a detectable behavior, you have a padding oracle. The detectable behavior can be an error, a lack of results, or a slower response.
-	   2.3 . CFB --> (cipher feedback mode ) cipher text, or the first block becomes the key stream for the next block.
-	                             And then it flips the next block as well.
-										  This has still remained secured.
-										  Pillow library python
                                           
 ---------------------------------------------------JWT---------------------------------------------------
 is  securely transmitting information between parties as a JSON object
