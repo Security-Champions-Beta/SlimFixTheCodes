@@ -20,11 +20,11 @@ How does Base64 Encoding works ? Convert the characters in the string into decim
 Why ? urlbased64 JWT  
 
 
-+ relpaced by - 
+  + relpaced by - 
 
-/ replaced by _ 
+  / replaced by _ 
 
-= are ommited
+  = are ommited
 
 * use on upload image for inline rendering on Minioo - binary data and ship a cross network fo normalize
           
